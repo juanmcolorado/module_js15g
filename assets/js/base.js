@@ -7,4 +7,13 @@
     imprimir el resultado en consola
     */
 
-    
+let number1 = parseInt(prompt("ingresa un valor"))
+let number2 = parseInt(prompt("ingresa un segundo valor"))
+ 
+if (number1 > number2){
+    console.log("es una division", number1 / number2)
+}else if (number1 < number2){
+    console.log("es una suma", number1 + number2)
+}else if (number1 == number2){
+    console.log("es una suma", number1 * number2)
+}
