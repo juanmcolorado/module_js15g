@@ -15,5 +15,6 @@ if (number1 > number2){
 }else if (number1 < number2){
     console.log("es una suma", number1 + number2)
 }else if (number1 == number2){
-    console.log("es una suma", number1 * number2)
+    console.log("es una multiplicacion", number1 * number2)
 }
+/* el else if final si lo quito el if manda error y no corre en el navegador*/
