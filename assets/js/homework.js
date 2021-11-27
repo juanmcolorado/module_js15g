@@ -1,44 +1,27 @@
-/*
- * 
- * Pedir al usuario el dia de la semana 
- * p.ej. lunes, martes, ...
- * Imprimir en consola el número del dia de la semana equivalente
- * es decir:
- * domingo -> 1, lunes -> 2, martes -> 3, etc...
- */
-    var day = prompt("Ingresa un dia de la semana")
-    var dayMod = day.toLowerCase ()
-    switch (dayMod){
-        case "domingo":
-            console.log(dayMod, " -> 1")
-            break
-        
-        case "lunes":
-            console.log(dayMod, " -> 2")
-            break
-        
-        case "martes":
-            console.log(dayMod, " -> 3")
-            break    
-        
-        case "miercoles":
-        case "miércoles":
-            console.log(dayMod, " -> 4")
-            break
-                
-        case "jueves":
-            console.log(dayMod, " -> 5")
-            break
-        
-        case "viernes":
-            console.log(dayMod, " -> 6")
-            break
+// pedir al usuario una palabra (permitir espacios, mayusculas)
+// Verificar que sea un palindromo
+// mandar en consola el resultado
+// -> La palabra "anita lava la tina" es un palindromo
 
-        case "sábado":
-        case "sabado":
-            console.log(dayMod, " -> 7")
-            break
-        
-        default:
-            console.log("No reconozco el día")
-    }
+const wordValue = prompt(' Prueba de texto palindromo.\n Ingresa tu texto:').trim().toLowerCase()
+
+let wordTest = ''
+let wordChange = ''
+
+if(wordValue != ''){
+    for(i = 0; i < wordValue.length; i++){
+        if(wordValue[i] !== ' '){
+            wordTest = wordTest +  wordValue[i]
+        }
+    }  
+    for(j = wordTest.length - 1; j >= 0 ; j--){
+        wordChange = wordChange + wordTest[j]
+    } 
+    wordTest === wordChange ?
+        console.log(`La palabra "${wordValue}" es un palindromo.`)
+    :
+        console.log(`La palabra "${wordValue}" no es un palindromo.`)
+
+} else {
+    console.log('Escribe correctamente tu texto')
+}
