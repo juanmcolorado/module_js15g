@@ -106,6 +106,7 @@ if(!isNaN(numberNew) && numberNew > 0 && numberNew <= 100){
 //mandar en consola el resultado
 //-> La palabra "anita lava la tina" es un palindromo
 // For solution
+/*
 const wordValue = prompt(' Prueba de texto palindromo.\n Ingresa tu texto:').trim().toLowerCase()
 
 let wordTest = ''
@@ -128,3 +129,6 @@ if(wordValue != ''){
 } else {
     console.log('Escribe correctamente tu texto')
 }
+*/
+
+let wordCap
