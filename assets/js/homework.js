@@ -38,9 +38,16 @@ let users = [
    }
 ]
 
-users.forEach((element, index, array) => {
-     // console.log(`'${element.firstName} ${element.lastName}': '${element.role}'`)
-   })
+const joinUsers = (arr) => {
+   return arr.reduce( (acc, user) => {
+       let userName = user.firstName + ' ' + user.lastName
+       acc[userName] = user.role
+       return acc
+   }, {})
+}
+
+console.log(joinUsers(users))
+
 
 // obtener un nuevo objeto con esta estructura
 //-> {
@@ -61,21 +68,10 @@ users.forEach((element, index, array) => {
 //          { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
 //      ]
 // hint: .filter()
-console.log(users[3])
 
-const filterUserByRole = (users) => {
-   let onlyStrArr = []
-   let element = 'Instructor'
-   for(element in users){
-       if(element === element.role){
-           onlyStrArr.push(element)
-       }
-   }
-   return filterUserByRole
-}
+const filterUserByRole = (arr, role) => arr.filter(user => user.role === role )
+console.log(filterUserByRole(users, 'Instructor'))
 
-console.log(filterUserByRole(role))
-// -> [modelo,marca,color, version, origen]
 
 // Ejercicio 3
 // tomando el siguiente array de objetos
@@ -98,3 +94,19 @@ let persons = [
    {name: 'Zack', age: 19, voted: false}
 ]
 
+const personVoted = (arrPersons) => {
+   return arrPersons.reduce( (acc, person) => {
+       return person.voted == true ? acc + 1: acc
+   }, 0)
+} 
+
+console.log(personVoted(persons))
+
+
+const averageAgeVoters = () =>  {
+   return persons.reduce( (acc, person) => {
+       return acc + person.age
+   }, 0) / persons.length
+}
+
+console.log(averageAgeVoters(persons))
